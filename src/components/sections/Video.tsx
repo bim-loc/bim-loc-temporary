@@ -19,7 +19,7 @@ export const Video = () => {
       <div className="card-body p-6">
 
         {video_url_list.map((video) => (
-          <>
+          <div key={video.id}>
             <div className="divider divider-soft text-2xl font-bold text-center">
               {video.title}
             </div>
@@ -34,7 +34,7 @@ export const Video = () => {
                 />
               </div>
             </div>
-          </>
+          </div>
         ))}
       </div>
     </SectionContainer>
