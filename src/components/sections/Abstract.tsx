@@ -4,7 +4,7 @@ export const Abstract = () => {
   return (
     <SectionContainer>
       <div className="card-body">
-        <div className="text-2xl font-bold text-center">
+        <div className="divider divider-soft text-2xl font-bold text-center">
           Abstract
         </div>
         <div className="text-lg leading-relaxed">

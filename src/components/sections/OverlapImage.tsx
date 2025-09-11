@@ -4,7 +4,7 @@ export const OverlapImage = () => {
   return (
     <SectionContainer>
       <div className="card-body">          
-        <div className="text-2xl font-bold text-center">
+        <div className="divider divider-soft text-2xl font-bold text-center">
           BIM-Aligned Trajectory Estimation
         </div>
           <div className="relative h-160">

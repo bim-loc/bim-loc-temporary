@@ -24,7 +24,7 @@ export const BibTeX = () => {
   return (
     <SectionContainer>
       <div className="card-body">
-        <div className="text-2xl font-bold text-center">
+        <div className="divider divider-soft text-2xl font-bold text-center">
           BibTeX References
         </div>
         {bibtexEntries.map((entry) => (

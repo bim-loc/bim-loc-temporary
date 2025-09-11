@@ -131,8 +131,7 @@ export const Title = () => {
           <div className="flex flex-wrap justify-center gap-6">
             {authors.map((author, index) => (
               <div key={index} className="group relative">
-                <div className="flex flex-col items-center rounded-2xl
-                                transition-all duration-300 border border-gray-100 min-w-[180px]">
+                <div className="flex flex-col items-center rounded-2xl transition-all duration-300 min-w-[180px]">
                   {/* <img 
                     src={author.icon} 
                     alt={author.name}

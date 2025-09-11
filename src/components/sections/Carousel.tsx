@@ -32,10 +32,10 @@ export const Carousel = () => {
   return (
     <SectionContainer>
       <div className="card-body">
-        <div className="text-2xl font-bold text-center">
+        <div className="divider divider-soft text-2xl font-bold text-center">
           Discrepancy Status Identification
         </div>
-        <div className="carousel w-full">
+        <div className="carousel w-full mb-4">
           {carouselData.map((item) => (
             <div key={item.id} id={item.id} className="carousel-item w-full">
               <div className="flex flex-row items-center justify-around gap-2 px-2">
@@ -46,7 +46,6 @@ export const Carousel = () => {
             </div>
           ))}
         </div>
-        <div className="divider divider-soft"></div>
         <div className="join w-full justify-center gap-4">
           {carouselData.map((item) => (
             <a key={item.id} href={`#${item.id}`} className="btn btn-md rounded-md btn-soft btn-neutral shadow-md">
