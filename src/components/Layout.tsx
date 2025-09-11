@@ -13,7 +13,7 @@ export const Layout = ({title, children}: LayoutProps) => {
 
     return (
     <>
-        <main className="overflow-hidden min-h-screen">
+        <main className="overflow-hidden">
             {children}
         </main>
     </>

@@ -128,23 +128,25 @@ export const Title = () => {
 
         {/* 作者信息 */}
         <div className="mb-4">
-          <div className="flex flex-wrap justify-center gap-6">
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-4 md:gap-6">
             {authors.map((author, index) => (
               <div key={index} className="group relative">
-                <div className="flex flex-col items-center rounded-2xl transition-all duration-300 min-w-[180px]">
+                <div className="flex flex-col items-center rounded-2xl transition-all duration-300 
+                                w-[calc(50%-0.25rem)] sm:w-[calc(33.333%-0.5rem)] md:w-[calc(25%-0.75rem)] lg:w-[calc(20%-1rem)] 
+                                min-w-[140px] max-w-[200px]">
                   {/* <img 
                     src={author.icon} 
                     alt={author.name}
                     className="w-16 h-16 rounded-full mx-auto mb-3 object-cover"
                   /> */}
-                  <div className="skeleton h-16 w-16 shrink-0 rounded-full mb-3"></div>
+                  <div className="skeleton h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16 shrink-0 rounded-full mb-2 sm:mb-3"></div>
                   <div className="text-center">
-                    <p className="font-bold text-lg text-gray-800 mb-1 group-hover:text-primary 
-                                  transition-colors duration-300">
+                    <p className="font-bold text-sm sm:text-base md:text-lg text-gray-800 mb-1 group-hover:text-primary 
+                                  transition-colors duration-300 leading-tight">
                       {author.name}
                     </p>
-                    <div className="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium">
-                      <span className="w-2 h-2 bg-primary rounded-full mr-2"></span>
+                    <div className="inline-flex items-center px-2 py-1 rounded-full bg-primary/10 text-primary text-xs sm:text-sm font-medium">
+                      <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary rounded-full mr-1.5 sm:mr-2"></span>
                       {author.address_flag}
                     </div>
                   </div>

@@ -6,7 +6,7 @@ export const Latex = () => {
   return (
     <SectionContainer>
       <div className="card-body">
-        <div className="divider divider-soft text-2xl font-bold text-center">
+        <div className="divider divider-neutral text-2xl font-bold text-center">
           Problem Formulation
         </div>
         <div className="flex flex-col items-center">

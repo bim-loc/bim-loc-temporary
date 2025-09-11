@@ -20,7 +20,7 @@ export const Video = () => {
 
         {video_url_list.map((video) => (
           <div key={video.id}>
-            <div className="divider divider-soft text-2xl font-bold text-center">
+            <div className="divider divider-neutral text-2xl font-bold text-center">
               {video.title}
             </div>
             <div className="relative group">

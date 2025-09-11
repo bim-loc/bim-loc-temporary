@@ -5,7 +5,7 @@ interface ContainerProps {
 
 export const SectionContainer = ({children, className = ""}: ContainerProps) => {
     return (
-        <div className={`card w-full max-w-4xl bg-base-100 shadow-md rounded-none ${className}`}>
+        <div className={`card w-full max-w-4xl rounded-none ${className}`}>
             {children}
         </div>
     )

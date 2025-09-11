@@ -32,7 +32,7 @@ export const Carousel = () => {
   return (
     <SectionContainer>
       <div className="card-body">
-        <div className="divider divider-soft text-2xl font-bold text-center">
+        <div className="divider divider-neutral text-2xl font-bold text-center">
           Discrepancy Status Identification
         </div>
         <div className="carousel w-full mb-4">
