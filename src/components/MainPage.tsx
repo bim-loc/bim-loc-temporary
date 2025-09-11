@@ -4,8 +4,8 @@ import { Abstract } from './sections/Abstract'
 import { BibTeX } from './sections/BibTeX'
 import { Video } from './sections/Video'
 import { OverlapImage } from './sections/OverlapImage'
-import { Latex } from './sections/Latex'
-import { Carousel } from './sections/Carousel'
+import { ProblemFormulation } from './sections/ProblemFormulation'
+import { Experiments } from './sections/Experiments'
 
 
 export const MainPage = () => {
@@ -13,10 +13,10 @@ export const MainPage = () => {
     <MainContainer className="flex flex-col items-center">
       <Title />
       <Abstract />
-      <Latex />
+      <ProblemFormulation />
       <OverlapImage />
       <Video />
-      <Carousel />
+      <Experiments />
       <BibTeX />
     </MainContainer>
   )

@@ -28,7 +28,7 @@ const carouselData = [
   }
 ];
 
-export const Carousel = () => {
+export const Experiments = () => {
   return (
     <SectionContainer>
       <div className="card-body">
