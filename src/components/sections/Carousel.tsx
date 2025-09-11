@@ -40,7 +40,7 @@ export const Carousel = () => {
             <div key={item.id} id={item.id} className="carousel-item w-full">
               <div className="flex flex-row items-center justify-around gap-2 px-2">
                 {item.images.map((imageSrc, index) => (
-                  <img key={index} src={imageSrc} className="w-1/2" />
+                  <img key={index} src={`${import.meta.env.BASE_URL}${imageSrc}`} className="w-1/2" />
                 ))}
               </div>
             </div>

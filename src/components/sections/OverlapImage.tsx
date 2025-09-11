@@ -11,14 +11,14 @@ export const OverlapImage = () => {
             <div className="absolute">
               <img
                 alt="Trajectory Image" 
-                src="/image_inner/trajectory.png"
+                src={`${import.meta.env.BASE_URL}/image_inner/trajectory.png`}
                 className="w-full h-full object-cover"
               />
             </div>
             <div className="absolute">
               <img 
                 alt="Discrepancy Image" 
-                src="/image_inner/discrepancy.png"
+                src={`${import.meta.env.BASE_URL}/image_inner/discrepancy.png`}
                 className="w-full h-full object-cover opacity-0 hover:opacity-100 transition-opacity duration-300"
               />
             </div>
