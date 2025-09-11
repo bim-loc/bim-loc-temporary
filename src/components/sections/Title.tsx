@@ -8,78 +8,66 @@ import {
 import { SectionContainer } from '../shared/SectionContainer';
 
 export const Title = () => {
-  // logo地址，没有则置为""即可
   const logo = './BKI.png';
-
-  // 标题
   const title = 'BIM-Loc';
-
-  // 标题补充，没有则置为''即可
-  const title_supp = 'BIM-Integrated Discrepancy-Aware LiDAR Localization';
-
-  // 作者清单（包含作者姓名、头像、主页、地址序号）
+  const title_supp = 'BIM-Integrated Discrepancy-Aware Indoor LiDAR-based Localization';
   const authors = [
     {
-      name: "Yinqiang ZHANG",
+      name: "Author A",
       icon: "./icon/capoo.webp",
-      homepage: "https://junyaohu.github.io/",
       address_flag: "1"
     },
     {
-      name: "Liang LU",
+      name: "Author B",
       icon: "./icon/capoo.webp",
-      homepage: "",
       address_flag: "1"
     },
     {
-      name: "Yipeng PAN",
+      name: "Author C",
       icon: "./icon/capoo.webp",
-      homepage: "",
       address_flag: "1"
     },
     {
-      name: "Maolin LEI",
+      name: "Author D",
       icon: "./icon/capoo.webp",
-      homepage: "",
       address_flag: "2"
     },
     {
-      name: "Xiaowei LUO",
+      name: "Author E",
       icon: "./icon/capoo.webp",
-      homepage: "",
       address_flag: "3"
     },
     {
-      name: "Jia PAN",
+      name: "Author F",
       icon: "./icon/capoo.webp",
-      homepage: "",
-      address_flag: "1,*"
+      address_flag: "1,★"
     },
   ];
 
-  // 地址清单（包含地址名称、头像、主页、地址序号）
   const addresses = [
     {
       address_flag: "1",
-      name: "The University of Hong Kong",
+      name: "The University of ABCF",
       icon: "./icon/home.png",
-      homepage: "https://www.hku.hk/"
     },
     {
       address_flag: "2",
-      name: "City University of Hong Kong",
+      name: "The Institut of D",
       icon: "./icon/ikun.avif",
-      homepage: "https://www.cityu.edu.hk/"
+    },
+    {
+      address_flag: "3",
+      name: "The Institut of E",
+      icon: "./icon/ikun.avif",
     },
   ];
 
-  // 共一和通讯提示
   const con_and_corresponding_author = 
-    "*: Corresponding Author";
+    "★: Corresponding Author";
 
   // 最新消息
-  // const news = "🔥 [2024-12-15] This template project is still under development.";
-  const news: string = "";
+  const news = "[2025-09-11] This template project is still under development.";
+  // const news: string = "";
 
   // 强调内容
   // const emphases = [
@@ -99,21 +87,16 @@ export const Title = () => {
     },
     {
       disabled: true,
-      name: "中译版",
-      icon: "BookOpenIcon",
-    },
-    {
-      disabled: false,
       name: "Code",
       link: "https://github.com/JunyaoHu/academic-project-page-template-vue",
       icon: "FolderIcon",
     },
-    {
-      disabled: false,
-      name: "Demo",
-      link: "https://junyaohu.github.io/academic-project-page-template-vue",
-      icon: "EnvelopeIcon",
-    },
+    // {
+    //   disabled: false,
+    //   name: "Demo",
+    //   link: "https://junyaohu.github.io/academic-project-page-template-vue",
+    //   icon: "EnvelopeIcon",
+    // },
   ];
 
   return (
@@ -144,18 +127,28 @@ export const Title = () => {
         </div>
 
         {/* 作者信息 */}
-        <div className="mb-5">
-          <div className="flex flex-wrap justify-center gap-8">
+        <div className="mb-4">
+          <div className="flex flex-wrap justify-center gap-6">
             {authors.map((author, index) => (
-              <div key={index} className="flex flex-row items-center gap-4 text-center">
-                <img 
-                  src={author.icon} 
-                  alt={author.name}
-                  className="w-16 h-16 rounded-full mx-auto mb-3 object-cover"
-                />
-                <div className="text-left">
-                  <p className="font-semibold text-base">{author.name}</p>
-                  <p className="text-sm text-gray-600">{author.address_flag}</p>
+              <div key={index} className="group relative">
+                <div className="flex flex-col items-center rounded-2xl
+                                transition-all duration-300 border border-gray-100 min-w-[180px]">
+                  {/* <img 
+                    src={author.icon} 
+                    alt={author.name}
+                    className="w-16 h-16 rounded-full mx-auto mb-3 object-cover"
+                  /> */}
+                  <div className="skeleton h-16 w-16 shrink-0 rounded-full mb-3"></div>
+                  <div className="text-center">
+                    <p className="font-bold text-lg text-gray-800 mb-1 group-hover:text-primary 
+                                  transition-colors duration-300">
+                      {author.name}
+                    </p>
+                    <div className="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium">
+                      <span className="w-2 h-2 bg-primary rounded-full mr-2"></span>
+                      {author.address_flag}
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}
@@ -163,18 +156,24 @@ export const Title = () => {
         </div>
 
         {/* 地址信息 */}
-        <div>
-          <div className="flex flex-wrap justify-center gap-8">
+        <div className="mb-4">
+          <div className="flex flex-wrap justify-center gap-6">
             {addresses.map((address, index) => (
-              <div key={index} className="flex flex-row items-center gap-4 text-center">
-                <img 
+              <div key={index} className="flex items-center gap-3 px-4 py-3">
+                {/* <img 
                   src={address.icon} 
                   alt={address.name}
                   className="w-12 h-12 rounded-full mx-auto mb-2 object-cover"
-                />
-                <div className="text-center">
-                  <p className="text-sm">{address.name}</p>
-                  <p className="text-xs text-gray-600">{address.address_flag}</p>
+                /> */}
+                <div className="skeleton h-12 w-12 shrink-0 rounded-full"></div>
+                <div className="text-left">
+                  <p className="font-medium text-gray-800 text-md">{address.name}</p>
+                  <div className="mt-1">
+                    <span className="inline-flex items-center px-2 py-1 rounded-full
+                                    text-xs font-bold bg-primary/10 text-primary border border-primary/20">
+                      {address.address_flag}
+                    </span>
+                  </div>
                 </div>
               </div>
             ))}
@@ -182,13 +181,13 @@ export const Title = () => {
         </div>
 
         {/* 共一和通讯提示 */}
-        <p className="text-sm text-gray-600 mb-5">
+        <p className="text-md text-gray-600 mb-6 font-bold">
           {con_and_corresponding_author}
         </p>
 
         {/* 最新消息 */}
         {news && (
-        <div className="alert alert-info max-w-2xl mx-auto mb-5">
+        <div className="alert alert-info max-w-2xl text-lg text-gray-600 mx-auto mb-6 shadow-md">
           <InformationCircleIcon className="w-6 h-6 shrink-0" />
           <span>{news}</span>
         </div>
@@ -212,7 +211,7 @@ export const Title = () => {
           {buttons.map((button, index) => (
             <div
               key={index}
-              className={`btn btn-neutral btn-md rounded-4xl shadow-lg 
+              className={`btn btn-neutral btn-lg rounded-4xl shadow-lg 
                         ${button.disabled ? 'btn-disabled' : ''}`}
               onClick={() => {
                 if (!button.disabled && button.link) {

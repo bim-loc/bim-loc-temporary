@@ -10,7 +10,7 @@ import { Carousel } from './sections/Carousel'
 
 export const MainPage = () => {
   return (
-    <MainContainer className="flex flex-col items-center gap-y-4">
+    <MainContainer className="flex flex-col items-center">
       <Title />
       <Abstract />
       <Latex />

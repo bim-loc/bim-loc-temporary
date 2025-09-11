@@ -1,14 +1,42 @@
 import { SectionContainer } from '../shared/SectionContainer';
 
+const video_url_list = [
+  {
+    id: 'real_performance',
+    url: 'https://www.youtube.com/embed/w3OknlQ9L6c',
+    title: 'BIM-Loc in Construction Site',
+  },
+  {
+    id: 'simulation',
+    url: 'https://www.youtube.com/embed/qyvKdIYjmdc',
+    title: 'BIM-Loc in Simulation',
+  },
+]
+
 export const Video = () => {
   return (
     <SectionContainer>
-        <div className="card-body">
-          <video controls className="block">
-            <source src="./video/real_performance.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
+      <div className="card-body p-6">
+
+        {video_url_list.map((video) => (
+          <>
+            <div className="text-2xl font-bold text-center">
+              {video.title}
+            </div>
+            <div className="relative group">
+              <div className="aspect-video w-full relative overflow-hidden">
+                <iframe
+                  className="w-full h-full rounded-md"
+                  src={video.url}
+                  title={video.title}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+            </div>
+          </>
+        ))}
+      </div>
     </SectionContainer>
   );
 };

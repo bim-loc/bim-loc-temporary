@@ -5,12 +5,12 @@ export const BibTeX = () => {
     {
       key: 'bibtex',
       title: 'BibTeX References',
-      bibtex: `@inproceedings{template2025,
-        title={Academic Project Page Template},
-        author={Zhang, Yinqiang and Others},
+      bibtex: `@inproceedings{bim_loc2025,
+        title={{BIM-Loc: BIM-Integrated Discrepancy-Aware Indoor LiDAR-based Localization}},
+        author={Author A and Others},
         booktitle={Proceedings of the Conference},
         year={2025},
-        pages={1--20}
+        pages={1--2}
       }`,
     },
   ];
@@ -24,11 +24,11 @@ export const BibTeX = () => {
   return (
     <SectionContainer>
       <div className="card-body">
+        <div className="text-2xl font-bold text-center">
+          BibTeX References
+        </div>
         {bibtexEntries.map((entry) => (
           <div key={entry.key}>
-            <div className="p-2 mb-2">
-              <span className="font-semibold text-lg">{entry.title}</span>
-            </div>
             <pre 
               className="bg-base-200 p-4 rounded-lg overflow-auto text-sm leading-relaxed 
                         cursor-pointer hover:bg-base-300 transition-colors select-none"
