@@ -35,20 +35,28 @@ export const Experiments = () => {
         <div className="divider divider-neutral text-2xl font-bold text-center">
           Discrepancy Status Identification
         </div>
-        <div className="carousel w-full mb-4">
+        <div className="carousel w-full">
           {carouselData.map((item) => (
             <div key={item.id} id={item.id} className="carousel-item w-full">
-              <div className="flex flex-row items-center justify-around gap-2 px-2">
-                {item.images.map((imageSrc, index) => (
-                  <img key={index} src={`${import.meta.env.BASE_URL}${imageSrc}`} className="w-1/2" />
-                ))}
+              <div className="flex flex-col items-center justify-center">
+                <div className="flex flex-row items-center justify-center gap-1">
+                    {item.images.map((imageSrc, index) => (
+                      <img key={index} 
+                      src={`${import.meta.env.BASE_URL}${imageSrc}`} 
+                      className="w-1/2" 
+                      alt={item.title}
+                      />
+                    ))}
+                </div>
+                <div className="text-center text-lg font-bold mt-2">{item.title}</div>
               </div>
             </div>
           ))}
         </div>
-        <div className="join w-full justify-center gap-4">
+        <div role="tablist" className="tabs tabs-border w-full justify-center gap-4">
           {carouselData.map((item) => (
-            <a key={item.id} href={`#${item.id}`} className="btn btn-md rounded-md btn-soft btn-neutral shadow-md">
+            <a role="tab" key={item.id} href={`#${item.id}`} 
+              className="tab tab-md bg-neutral-content rounded-md shadow-md font-bold">
               {item.title}
             </a>
           ))}
