@@ -3,29 +3,65 @@ import { SectionContainer } from '../shared/SectionContainer';
 // carousel data
 const carouselData = [
   {
-    id: 'item1',
-    title: 'Real Floor 06',
+    id: 'sim_f07',
+    data_type: 'simulation',
+    title: 'Simulation Floor-07',
+    button_title: 'Floor-07',
     images: [
-      '/progress/Real_floor_06.png',
-      '/progress/Real_floor_06_existence.png'
+      '/progress/Sim_floor_07.webp',
+      '/progress/Sim_floor_07_existence.webp'
     ]
   },
   {
-    id: 'item2',
-    title: 'Real Floor 08',
+    id: 'sim_f08',
+    data_type: 'simulation',
+    title: 'Simulation Floor-08',
+    button_title: 'Floor-08',
     images: [
-      '/progress/Real_floor_08.png',
-      '/progress/Real_floor_08_existence.png'
+      '/progress/Sim_floor_08.webp',
+      '/progress/Sim_floor_08_existence.webp'
     ]
   },
   {
-    id: 'item3',
-    title: 'Sim Floor 07',
+    id: 'sim_f10',
+    data_type: 'simulation',
+    title: 'Simulation Floor-10',
+    button_title: 'Floor-10',
     images: [
-      '/progress/Sim_floor_07.png',
-      '/progress/Sim_floor_07_existence.png'
+      '/progress/Sim_floor_10.webp',
+      '/progress/Sim_floor_10_existence.webp'
     ]
-  }
+  },
+  {
+    id: 'sim_f12',
+    data_type: 'simulation',
+    title: 'Simulation Floor-12',
+    button_title: 'Floor-12',
+    images: [
+      '/progress/Sim_floor_12.webp',
+      '/progress/Sim_floor_12_existence.webp'
+    ]
+  },
+  {
+    id: 'con_f06',
+    data_type: 'construction',
+    title: 'Construction Floor-06',
+    button_title: 'Floor-06',
+    images: [
+      '/progress/Real_floor_06.webp',
+      '/progress/Real_floor_06_existence.webp'
+    ]
+  },
+  {
+    id: 'con_f08',
+    data_type: 'construction',
+    title: 'Construction Floor-08',
+    button_title: 'Floor-08',
+    images: [
+      '/progress/Real_floor_08.webp',
+      '/progress/Real_floor_08_existence.webp'
+    ]
+  },
 ];
 
 export const Experiments = () => {
@@ -33,7 +69,7 @@ export const Experiments = () => {
     <SectionContainer>
       <div className="card-body">
         <div className="divider divider-neutral text-2xl font-bold text-center">
-          Discrepancy Status Identification
+          Simluation & Construction Discrepancy Map
         </div>
         <div className="carousel w-full">
           {carouselData.map((item) => (
@@ -53,13 +89,32 @@ export const Experiments = () => {
             </div>
           ))}
         </div>
-        <div role="tablist" className="tabs tabs-border w-full justify-center gap-4">
-          {carouselData.map((item) => (
-            <a role="tab" key={item.id} href={`#${item.id}`} 
-              className="tab tab-md bg-neutral-content rounded-md shadow-md font-bold">
-              {item.title}
-            </a>
-          ))}
+        <div className="flex flex-col w-full">
+          {/* Simulation Benchmark */}
+          <fieldset className="fieldset border-base-300 border rounded-box w-full p-2">
+            <legend className="fieldset-legend text-md">Simulation Benchmark (CutyU-02)</legend>
+            <div role="tablist" className="tabs tabs-border w-full justify-center gap-4">
+              {carouselData.filter(item => item.data_type === 'simulation').map((item) => (
+                <a role="tab" key={item.id} href={`#${item.id}`} 
+                  className="tab tab-md bg-neutral-content rounded-md shadow-md font-bold flex-1 min-w-0 text-center">
+                  {item.button_title}
+                </a>
+              ))}
+            </div>
+          </fieldset>
+
+          {/* Construction Benchmark (CityU) */}
+          <fieldset className="fieldset border-base-300 border rounded-box w-full p-2">
+            <legend className="fieldset-legend text-md">Construction Benchmark</legend>
+            <div role="tablist" className="tabs tabs-border w-full justify-center gap-4">
+              {carouselData.filter(item => item.data_type === 'construction').map((item) => (
+                <a role="tab" key={item.id} href={`#${item.id}`} 
+                  className="tab tab-md bg-neutral-content rounded-md shadow-md font-bold flex-1 min-w-0 text-center">
+                  {item.button_title}
+                </a>
+              ))}
+            </div>
+          </fieldset>
         </div>
       </div>
     </SectionContainer>
