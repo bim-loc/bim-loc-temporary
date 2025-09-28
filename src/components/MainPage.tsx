@@ -15,8 +15,8 @@ export const MainPage = () => {
       <Abstract />
       <ProblemFormulation />
       <OverlapImage />
-      <Video />
       <Experiments />
+      <Video />
       <BibTeX />
     </MainContainer>
   )

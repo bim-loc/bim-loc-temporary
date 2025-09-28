@@ -2,14 +2,19 @@ import { SectionContainer } from '../shared/SectionContainer';
 
 const video_url_list = [
   {
-    id: 'real_performance',
-    url: 'https://www.youtube.com/embed/w3OknlQ9L6c',
-    title: 'BIM-Loc in Construction Site',
-  },
-  {
     id: 'simulation',
     url: 'https://www.youtube.com/embed/qyvKdIYjmdc',
-    title: 'BIM-Loc in Simulation',
+    title: 'Simulation Benchmark (Office-01)',
+  },
+  {
+    id: 'construction-f06',
+    url: 'https://www.youtube.com/embed/YLP0EsT-fmo',
+    title: 'Construction Benchmark (Floor-06)',
+  },
+  {
+    id: 'construction-f08',
+    url: 'https://www.youtube.com/embed/RwSfap5dQoA',
+    title: 'Construction Benchmark (Floor-08)',
   },
 ]
 
