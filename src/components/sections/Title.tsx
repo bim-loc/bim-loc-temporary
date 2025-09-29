@@ -13,32 +13,32 @@ export const Title = () => {
   const title_supp = 'BIM-Integrated Discrepancy-Aware Indoor LiDAR-based Localization';
   const authors = [
     {
-      name: "Author A",
+      name: "Yinqiang Zhang",
       icon: "./icon/capoo.webp",
       address_flag: "1"
     },
     {
-      name: "Author B",
+      name: "Liang Lu",
       icon: "./icon/capoo.webp",
       address_flag: "1"
     },
     {
-      name: "Author C",
+      name: "Yinpeng Pan",
       icon: "./icon/capoo.webp",
       address_flag: "1"
     },
     {
-      name: "Author D",
+      name: "Maolin Lei",
       icon: "./icon/capoo.webp",
       address_flag: "2"
     },
     {
-      name: "Author E",
+      name: "Xiaowei Luo",
       icon: "./icon/capoo.webp",
       address_flag: "3"
     },
     {
-      name: "Author F",
+      name: "Jia Pan",
       icon: "./icon/capoo.webp",
       address_flag: "1,★"
     },
@@ -47,17 +47,17 @@ export const Title = () => {
   const addresses = [
     {
       address_flag: "1",
-      name: "The University of ABCF",
+      name: "The University of Hong Kong (HKU)",
       icon: "./icon/home.png",
     },
     {
       address_flag: "2",
-      name: "The Institut of D",
+      name: "City University of Hong Kong (CityU)",
       icon: "./icon/ikun.avif",
     },
     {
       address_flag: "3",
-      name: "The Institut of E",
+      name: "Italian Institute of Technology (IIT)",
       icon: "./icon/ikun.avif",
     },
   ];
@@ -82,7 +82,7 @@ export const Title = () => {
   const buttons = [
     {
       disabled: true,
-      name: "Paper",
+      name: "Arxiv",
       icon: "DocumentTextIcon",
     },
     {
@@ -91,12 +91,6 @@ export const Title = () => {
       link: "https://github.com/JunyaoHu/academic-project-page-template-vue",
       icon: "FolderIcon",
     },
-    // {
-    //   disabled: false,
-    //   name: "Demo",
-    //   link: "https://junyaohu.github.io/academic-project-page-template-vue",
-    //   icon: "EnvelopeIcon",
-    // },
   ];
 
   return (
@@ -126,19 +120,13 @@ export const Title = () => {
           </div>
         </div>
 
-        {/* 作者信息 */}
-        <div className="mb-4">
+        {/* <div className="mb-4">
           <div className="flex flex-wrap justify-center gap-2 sm:gap-4 md:gap-6">
             {authors.map((author, index) => (
               <div key={index} className="group relative">
                 <div className="flex flex-col items-center rounded-2xl transition-all duration-300 
                                 w-[calc(50%-0.25rem)] sm:w-[calc(33.333%-0.5rem)] md:w-[calc(25%-0.75rem)] lg:w-[calc(20%-1rem)] 
                                 min-w-[140px] max-w-[200px]">
-                  {/* <img 
-                    src={author.icon} 
-                    alt={author.name}
-                    className="w-16 h-16 rounded-full mx-auto mb-3 object-cover"
-                  /> */}
                   <div className="skeleton h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16 shrink-0 rounded-full mb-2 sm:mb-3"></div>
                   <div className="text-center">
                     <p className="font-bold text-sm sm:text-base md:text-lg text-gray-800 mb-1 group-hover:text-primary 
@@ -154,18 +142,12 @@ export const Title = () => {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
-        {/* 地址信息 */}
-        <div className="mb-4">
+        {/* <div className="mb-4">
           <div className="flex flex-wrap justify-center gap-6">
             {addresses.map((address, index) => (
               <div key={index} className="flex items-center gap-3 px-4 py-3">
-                {/* <img 
-                  src={address.icon} 
-                  alt={address.name}
-                  className="w-12 h-12 rounded-full mx-auto mb-2 object-cover"
-                /> */}
                 <div className="skeleton h-12 w-12 shrink-0 rounded-full"></div>
                 <div className="text-left">
                   <p className="font-medium text-gray-800 text-md">{address.name}</p>
@@ -179,10 +161,29 @@ export const Title = () => {
               </div>
             ))}
           </div>
+        </div> */}
+
+        <div className="mb-4">
+          <div className="flex flex-wrap justify-center gap-2">
+            {authors.map((author, index) => (
+              <span key={index} className="text-xl font-bold">
+                {author.name} <sup>{author.address_flag}</sup>
+                {index < authors.length - 1 && <span className="mx-1">,</span>}
+              </span>
+            ))}
+          </div>
+          <div className="mt-2">
+            {addresses.map((address, index) => (
+              <span key={index} className="text-md text-gray-500">
+                {address.address_flag}: {address.name} 
+                {index < addresses.length - 1 && <span className="mx-2">|</span>}
+              </span>
+            ))}
+          </div>
         </div>
 
         {/* 共一和通讯提示 */}
-        <p className="text-md text-gray-600 mb-6 font-bold">
+        <p className="text-lg text-gray-600 mb-6 font-bold">
           {con_and_corresponding_author}
         </p>
 

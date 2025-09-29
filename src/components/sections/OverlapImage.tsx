@@ -28,10 +28,10 @@ export const OverlapImage = () => {
         </div>
         {/* Overlapped Image for comparison */}
         <div className="dropdown dropdown-center">
-          <div tabIndex={0} role="button" className="btn btn-soft btn-neutral-content w-full shadow-md">
+          <div tabIndex={0} role="button" className="btn btn-soft w-full shadow-md">
             {selected_floor}
           </div>
-          <ul tabIndex={0} className="dropdown-content menu bg-neutral-200 w-full p-2 rounded-md shadow-md items-center">
+          <ul tabIndex={0} className="dropdown-content menu bg-base-200 w-full p-2 items-center">
             {Object.keys(compare_dict).map((floor) => (
               <li key={floor}>
                 <a className="font-bold" 
@@ -60,7 +60,7 @@ export const OverlapImage = () => {
         </div>
       </div>
 
-      <div className="flex flex-row justify-around w-full px-8 text-lg text-gray-600 font-bold"> 
+      <div className="flex flex-row justify-around w-full px-8 text-lg font-bold"> 
         <div> BIM-Reality Discrepancy</div>
         <div> Reconstruction Points</div>
       </div>

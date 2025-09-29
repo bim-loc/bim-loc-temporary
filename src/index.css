@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @plugin "daisyui"{
-  themes: nord --default;
+  themes: winter --default, 
+  dim --prefersdark, 
+  nord, dim;
 }
 
 html {

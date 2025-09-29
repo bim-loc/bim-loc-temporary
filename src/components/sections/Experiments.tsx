@@ -96,7 +96,7 @@ export const Experiments = () => {
             <div role="tablist" className="tabs tabs-border w-full justify-center gap-4">
               {carouselData.filter(item => item.data_type === 'simulation').map((item) => (
                 <a role="tab" key={item.id} href={`#${item.id}`} 
-                  className="tab tab-md bg-neutral-content rounded-md shadow-md font-bold flex-1 min-w-0 text-center">
+                  className="tab tab-md bg-base-200 rounded-md shadow-md font-bold flex-1 min-w-0 text-center">
                   {item.button_title}
                 </a>
               ))}
@@ -109,7 +109,7 @@ export const Experiments = () => {
             <div role="tablist" className="tabs tabs-border w-full justify-center gap-4">
               {carouselData.filter(item => item.data_type === 'construction').map((item) => (
                 <a role="tab" key={item.id} href={`#${item.id}`} 
-                  className="tab tab-md bg-neutral-content rounded-md shadow-md font-bold flex-1 min-w-0 text-center">
+                  className="tab tab-md bg-base-200 rounded-md shadow-md font-bold flex-1 min-w-0 text-center">
                   {item.button_title}
                 </a>
               ))}
