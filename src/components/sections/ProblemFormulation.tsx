@@ -13,8 +13,8 @@ const methodologyData = [
   
   {
     label: '(1)',
-    title: 'BIM-point-cloud association',
-    description: 'BIM-point-cloud association',
+    title: 'BIM-point association',
+    description: 'BIM-point association',
     disabled: false,
   },
   {
@@ -38,7 +38,9 @@ export const ProblemFormulation = () => {
         <div className="card-body">
           {/* Problem Formulation */}
           <div className="divider divider-neutral text-2xl font-bold text-center">
-            Problem Formulation
+            <div className="flex flex-row gap-2 xl:flex-nowrap flex-wrap justify-center">
+              <div>Methodology</div>
+            </div>
           </div>
 
           <fieldset className="fieldset border-base-300 border rounded-box rounded-md w-full">
@@ -65,23 +67,18 @@ export const ProblemFormulation = () => {
                                 \sum^K_{k=1}\sum_{n=1}^N\underbrace{\delta(n, k)}_{(1)} \cdot \underbrace{r(\mathcal{P}_k, \boldsymbol{x}_k, \boldsymbol{b}_n)}_{(2)}\cdot\underbrace{(1-\mathbb{I}_n)}_{(3)}
                                 \end{equation*}" />
             </div>
+            <div className="flex flex-row flex-wrap justify-center w-full mt-2 p-2">
+              <ul className="list w-1/2 text-xl">
+                  {methodologyData.map((item) => (
+                    <li className="list-row">
+                      <strong className="text-2xl opacity-50">{item.label}</strong> 
+                      <div className="btn btn-ghost btn-lg">{item.title}</div>
+                    </li>
+                  ))}
+              </ul>
+              <div className="skeleton h-auto w-1/2"/>
+            </div>
           </fieldset>
-
-          <div className="divider divider-neutral text-2xl font-bold text-center">
-            Methodology
-          </div>
-          {/* Formula Explanation, left-aligned */}
-          <div className="flex flex-row flex-wrap justify-center w-full mt-2">
-            <ul className="list w-1/2 text-xl">
-                {methodologyData.map((item) => (
-                  <li className="list-row">
-                    <strong className="text-2xl opacity-50">{item.label}</strong> 
-                    <div className="btn btn-ghost btn-lg">{item.title}</div>
-                  </li>
-                ))}
-            </ul>
-            <div className="skeleton h-auto w-1/2"/>
-          </div>
         </div>
       </SectionContainer>
     </>

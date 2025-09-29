@@ -5,20 +5,24 @@ import { SectionContainer } from '../shared/SectionContainer';
 // Compare dict for overlap image
 const data_folder_name = 'trajectory';
 const compare_dict = {
-  'Floor-06 (Mid-360)': {
-    'discrepancy': 'Floor-06/discrepancy.webp',
-    'trajectory': 'Floor-06/trajectory.webp',
+  'Floor-06 (Livox Mid-360)': {
+    'discrepancy': 'Floor-06-livox/discrepancy.webp',
+    'trajectory': 'Floor-06-livox/trajectory.webp',
   },
-  'Floor-08 (Mid-360)': {
-    'discrepancy': 'Floor-08/discrepancy.webp',
-    'trajectory': 'Floor-08/trajectory.webp',
+  'Floor-08 (Livox Mid-360)': {
+    'discrepancy': 'Floor-08-livox/discrepancy.webp',
+    'trajectory': 'Floor-08-livox/trajectory.webp',
+  },
+  'Floor-06 (Ouster OS0-128)': {
+    'discrepancy': 'Floor-06-ouster/discrepancy.webp',
+    'trajectory': 'Floor-06-ouster/trajectory.webp',
   },
 } as const;
 type FloorKey = keyof typeof compare_dict;
 
 
 export const OverlapImage = () => {
-  const [selected_floor, setSelectedFloor] = useState<FloorKey>('Floor-06 (Mid-360)');
+  const [selected_floor, setSelectedFloor] = useState<FloorKey>('Floor-06 (Livox Mid-360)');
 
   return (
     <SectionContainer>
