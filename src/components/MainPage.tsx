@@ -1,7 +1,7 @@
 import { MainContainer } from './shared/MainContainer'
 import { Title } from './sections/Title'
 import { Abstract } from './sections/Abstract'
-import { BibTeX } from './sections/BibTeX'
+// import { BibTeX } from './sections/BibTeX'
 import { Video } from './sections/Video'
 import { OverlapImage } from './sections/OverlapImage'
 import { ProblemFormulation } from './sections/ProblemFormulation'
@@ -17,7 +17,7 @@ export const MainPage = () => {
       <OverlapImage />
       <Experiments />
       <Video />
-      <BibTeX />
+      {/* <BibTeX /> */}
     </MainContainer>
   )
 }

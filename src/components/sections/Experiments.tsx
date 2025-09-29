@@ -1,4 +1,5 @@
 import { SectionContainer } from '../shared/SectionContainer';
+import { useState } from 'react';
 
 // carousel data
 const carouselData = [
@@ -65,21 +66,31 @@ const carouselData = [
 ];
 
 export const Experiments = () => {
+  const [activeTab, setActiveTab] = useState('sim_f07');
+
+  const handleTabClick = (tabId: string) => {
+    setActiveTab(tabId);
+  };
+
   return (
     <SectionContainer>
       <div className="card-body">
         <div className="divider divider-neutral text-2xl font-bold text-center">
-          Simluation & Construction Discrepancy Map
+          Simluation & Construction Discrepancy Detection
+        </div>
+        <div className="flex flex-row justify-around gap-4">
+          <div className="text-center text-lg font-bold mt-2">Texture Map</div>
+          <div className="text-center text-lg font-bold mt-2">Discrepancy Map</div>
         </div>
         <div className="carousel w-full">
           {carouselData.map((item) => (
-            <div key={item.id} id={item.id} className="carousel-item w-full">
+            <div key={item.id} id={item.id} className={`carousel-item w-full ${activeTab === item.id ? 'block' : 'hidden'}`}>
               <div className="flex flex-col items-center justify-center">
                 <div className="flex flex-row items-center justify-center gap-1">
                     {item.images.map((imageSrc, index) => (
                       <img key={index} 
                       src={`${import.meta.env.BASE_URL}${imageSrc}`} 
-                      className="w-1/2" 
+                      className="w-1/2"
                       alt={item.title}
                       />
                     ))}
@@ -95,10 +106,11 @@ export const Experiments = () => {
             <legend className="fieldset-legend text-md">Simulation Benchmark (CutyU-02)</legend>
             <div role="tablist" className="tabs tabs-border w-full justify-center gap-4">
               {carouselData.filter(item => item.data_type === 'simulation').map((item) => (
-                <a role="tab" key={item.id} href={`#${item.id}`} 
-                  className="tab tab-md bg-base-200 rounded-md shadow-md font-bold flex-1 min-w-0 text-center">
+                <button role="tab" key={item.id} 
+                  onClick={() => handleTabClick(item.id)}
+                  className={"tab tab-md rounded-md shadow-md font-bold flex-1 min-w-0 text-center bg-base-200"}>
                   {item.button_title}
-                </a>
+                </button>
               ))}
             </div>
           </fieldset>
@@ -108,10 +120,11 @@ export const Experiments = () => {
             <legend className="fieldset-legend text-md">Construction Benchmark</legend>
             <div role="tablist" className="tabs tabs-border w-full justify-center gap-4">
               {carouselData.filter(item => item.data_type === 'construction').map((item) => (
-                <a role="tab" key={item.id} href={`#${item.id}`} 
-                  className="tab tab-md bg-base-200 rounded-md shadow-md font-bold flex-1 min-w-0 text-center">
+                <button role="tab" key={item.id} 
+                  onClick={() => handleTabClick(item.id)}
+                  className={"tab tab-md rounded-md shadow-md font-bold flex-1 min-w-0 text-center bg-base-200"}>
                   {item.button_title}
-                </a>
+                </button>
               ))}
             </div>
           </fieldset>

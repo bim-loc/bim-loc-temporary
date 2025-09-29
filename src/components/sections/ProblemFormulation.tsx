@@ -5,17 +5,29 @@ import { SectionContainer } from '../shared/SectionContainer';
 
 const methodologyData = [
   {
-    title: '1. Multi-Hit Ray Casting',
-    description: 'Multi-Hit Ray Casting',
+    label: '(0)',
+    title: 'Front-end odometry',
+    description: 'Front-end odometry',
+    disabled: false,
   },
   
   {
-    title: '2. BIM-Aligned Trajectory Estimation',
-    description: 'BIM-Aligned Trajectory Estimation',
+    label: '(1)',
+    title: 'BIM-point-cloud association',
+    description: 'BIM-point-cloud association',
+    disabled: false,
   },
   {
-    title: '3. Discrepancy Identification',
-    description: 'Discrepancy Status Identification',
+    label: '(2)',
+    title: 'BIM-observation consistency',
+    description: 'BIM-observation consistency',
+    disabled: false,
+  },
+  {
+    label: '(3)',
+    title: 'Discrepancy indentification',
+    description: 'Discrepancy indentification',
+    disabled: false,
   },
 ];
 
@@ -28,39 +40,48 @@ export const ProblemFormulation = () => {
           <div className="divider divider-neutral text-2xl font-bold text-center">
             Problem Formulation
           </div>
-          <div className="flex flex-col items-center">
-            <BlockMath math="\begin{equation*}
-                            \begin{split}
-                                (\hat{\mathcal{X}}, \hat{\mathcal{L}}) & = \arg\max_{\mathcal{X}, \mathcal{L}}\Big[p(\mathcal{X}, \mathcal{L}|\mathcal{Z}, \mathcal{B})\Big] \\ 
-                                                                    & = \arg\max_{\mathcal{X}, \mathcal{L}}\Big[p(\mathcal{X})\cdot \prod_{n=1}^N\prod_{k=1}^K \ p(\boldsymbol{z}_k|\boldsymbol{x}_k, \boldsymbol{b}_n)^{(1-\mathbb{I}_n)}\cdot p(\mathcal{L}|\mathcal{B})\Big] \ ,
-                            \end{split}
-                            \end{equation*}" />
-            <BlockMath math="\begin{equation*}
-                              \mathcal{E} = r(\boldsymbol{x}_0)+\sum_{k=1}^K \underbrace{r(\boldsymbol{x}_k|\boldsymbol{x}_{k-1})}_{(0)} + 
-                              \sum^K_{k=1}\sum_{n=1}^N\underbrace{\delta(n, k)}_{(1)} \cdot \underbrace{r(\mathcal{P}_k, \boldsymbol{x}_k, \boldsymbol{b}_n)}_{(2)}\cdot\underbrace{(1-\mathbb{I}_n)}_{(3)}
+
+          <fieldset className="fieldset border-base-300 border rounded-box rounded-md w-full">
+            <legend className="fieldset-legend text-lg">
+              Max-A-Posteriori Formulation
+            </legend>
+            <div className="text-lg">
+              <BlockMath math="\begin{equation*}
+                              \begin{split}
+                                  (\hat{\mathcal{X}}, \hat{\mathcal{L}}) & = \arg\max_{\mathcal{X}, \mathcal{L}}\Big[p(\mathcal{X}, \mathcal{L}|\mathcal{Z}, \mathcal{B})\Big] \\ 
+                                                                      & = \arg\max_{\mathcal{X}, \mathcal{L}}\Big[p(\mathcal{X})\cdot \prod_{n=1}^N\prod_{k=1}^K \ p(\boldsymbol{z}_k|\boldsymbol{x}_k, \boldsymbol{b}_n)^{(1-\mathbb{I}_n)}\cdot p(\mathcal{L}|\mathcal{B})\Big] \ ,
+                              \end{split}
                               \end{equation*}" />
-          </div>
-        </div>
-      </SectionContainer>
-      <SectionContainer>
-        <div className="card-body">
+            </div>
+          </fieldset>
+
+          <fieldset className="fieldset border-base-300 border rounded-box rounded-md w-full">
+            <legend className="fieldset-legend text-lg">
+              Residual Formulation
+            </legend>
+            <div className="text-lg">
+              <BlockMath math="\begin{equation*}
+                                \mathcal{E} = r(\boldsymbol{x}_0)+\sum_{k=1}^K \underbrace{r(\boldsymbol{x}_k|\boldsymbol{x}_{k-1})}_{(0)} + 
+                                \sum^K_{k=1}\sum_{n=1}^N\underbrace{\delta(n, k)}_{(1)} \cdot \underbrace{r(\mathcal{P}_k, \boldsymbol{x}_k, \boldsymbol{b}_n)}_{(2)}\cdot\underbrace{(1-\mathbb{I}_n)}_{(3)}
+                                \end{equation*}" />
+            </div>
+          </fieldset>
+
           <div className="divider divider-neutral text-2xl font-bold text-center">
             Methodology
           </div>
-          {methodologyData.map((item) => (
-          <fieldset className="fieldset rounded-box w-full border border-base-300 p-4">
-            <legend className="fieldset-legend text-xl font-bold">{item.title}</legend>
-            <div className="flex flex-row justify-between gap-4">
-              <div className="skeleton h-36 w-1/3"/>
-              <div className="flex flex-col h-36 w-2/3 gap-y-2">
-                <div className="skeleton h-9 w-1/2"/>
-                <div className="skeleton h-9 w-3/4"/>
-                <div className="skeleton h-9 w-full"/>
-                <div className="skeleton h-9 w-full"/>
-              </div>
-            </div>
-          </fieldset>
-          ))}
+          {/* Formula Explanation, left-aligned */}
+          <div className="flex flex-row flex-wrap justify-center w-full mt-2">
+            <ul className="list w-1/2 text-xl">
+                {methodologyData.map((item) => (
+                  <li className="list-row">
+                    <strong className="text-2xl opacity-50">{item.label}</strong> 
+                    <div className="btn btn-ghost btn-lg">{item.title}</div>
+                  </li>
+                ))}
+            </ul>
+            <div className="skeleton h-auto w-1/2"/>
+          </div>
         </div>
       </SectionContainer>
     </>

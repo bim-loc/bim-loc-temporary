@@ -5,12 +5,12 @@ export const BibTeX = () => {
     {
       key: 'bibtex',
       title: 'BibTeX References',
-      bibtex: `@inproceedings{bim_loc2025,
+      bibtex: `@inproceedings{bim_loc_tbd,
         title={{BIM-Loc: BIM-Integrated Discrepancy-Aware Indoor LiDAR-based Localization}},
-        author={Author A and Others},
-        booktitle={Proceedings of the Conference},
-        year={2025},
-        pages={1--2}
+        author={Yinqiang Zhang and Liang Lu and Yinpeng Pan and Maolin Lei and Xiaowei Luo and Jia Pan},
+        booktitle={TBD},
+        year={TBD},
+        pages={TBD}
       }`,
     },
   ];

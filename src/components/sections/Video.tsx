@@ -22,13 +22,15 @@ export const Video = () => {
   return (
     <SectionContainer>
       <div className="card-body p-6">
-
+        <div className="divider divider-neutral text-2xl font-bold text-center">
+            Video Demonstration
+        </div>
         {video_url_list.map((video) => (
           <div key={video.id}>
-            <div className="divider divider-neutral text-2xl font-bold text-center">
+            <div className="text-xl font-bold text-left mt-4">
               {video.title}
             </div>
-            <div className="relative group">
+            <div className="relative group mt-4">
               <div className="aspect-video w-full relative overflow-hidden">
                 <iframe
                   className="w-full h-full rounded-md"
