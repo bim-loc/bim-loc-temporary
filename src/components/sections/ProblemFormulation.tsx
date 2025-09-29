@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import 'katex/dist/katex.min.css';
 import { BlockMath } from 'react-katex';
 import { SectionContainer } from '../shared/SectionContainer';
@@ -5,33 +6,43 @@ import { SectionContainer } from '../shared/SectionContainer';
 
 const methodologyData = [
   {
+    idx: 0,
     label: '(0)',
     title: 'Front-end odometry',
     description: 'Front-end odometry',
-    disabled: false,
+    disabled: true,
+    image: '',
   },
   
   {
+    idx: 1,
     label: '(1)',
     title: 'BIM-point association',
     description: 'BIM-point association',
     disabled: false,
+    image: 'method/multi_hit_raycasting.webp',
   },
-  {
+  { 
+    idx: 2,
     label: '(2)',
     title: 'BIM-observation consistency',
     description: 'BIM-observation consistency',
     disabled: false,
+    image: 'method/trajectory_optimization.svg',
   },
   {
+    idx: 3,
     label: '(3)',
     title: 'Discrepancy indentification',
     description: 'Discrepancy indentification',
     disabled: false,
+    image: 'method/discrepancy_detection.webp',
   },
 ];
 
 export const ProblemFormulation = () => {
+  const [selectedMethod, setSelectedMethod] = useState(1);
+
   return (
     <>
       <SectionContainer>
@@ -67,16 +78,19 @@ export const ProblemFormulation = () => {
                                 \sum^K_{k=1}\sum_{n=1}^N\underbrace{\delta(n, k)}_{(1)} \cdot \underbrace{r(\mathcal{P}_k, \boldsymbol{x}_k, \boldsymbol{b}_n)}_{(2)}\cdot\underbrace{(1-\mathbb{I}_n)}_{(3)}
                                 \end{equation*}" />
             </div>
-            <div className="flex flex-row flex-wrap justify-center w-full mt-2 p-2">
+            <div className="flex flex-row flex-wrap justify-center items-center w-full h-112 mt-2 p-2">
               <ul className="list w-1/2 text-xl">
                   {methodologyData.map((item) => (
                     <li className="list-row">
                       <strong className="text-2xl opacity-50">{item.label}</strong> 
-                      <div className="btn btn-ghost btn-lg">{item.title}</div>
+                      <button className="btn btn-ghost btn-lg" disabled={item.disabled}
+                      onClick={() => setSelectedMethod(item.idx)}>{item.title}</button>
                     </li>
                   ))}
               </ul>
-              <div className="skeleton h-auto w-1/2"/>
+              <div className="card w-1/2 p-2 justify-center items-center">
+                  <img src={`${import.meta.env.BASE_URL}/${methodologyData[selectedMethod].image}`} alt="method" style={{backgroundColor: 'white'}} />
+              </div>
             </div>
           </fieldset>
         </div>

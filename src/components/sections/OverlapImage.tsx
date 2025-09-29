@@ -46,7 +46,7 @@ export const OverlapImage = () => {
           </ul>
         </div>
 
-        <div className={`diff aspect-${compare_dict[selected_floor].aspect}`} tabIndex={0}>
+        <div className={`diff aspect-4/3`} tabIndex={0}>
           <div className="diff-item-1" role="img" tabIndex={0}>
             <img
               alt="Discrepancy Image" 
