@@ -14,7 +14,7 @@ export const Navbar = () => {
       <SectionContainer className="text-center text-lg font-bold p-2">
         <div className="navbar navbar-center bg-base-400">
           <div className="flex flex-1 justify-between">
-            <span className="italic text-primary">
+            <span className="text-base-content text-xl">
               BIM-Loc
             </span>
           </div>
@@ -23,7 +23,7 @@ export const Navbar = () => {
               type="checkbox" 
               checked={checkIsDefault(theme)}
               onChange={toggleTheme}
-              className="toggle toggle-primary toggle-md theme-controller"
+              className="toggle toggle-base-content toggle-md theme-controller"
             />
           </div>
         </div>

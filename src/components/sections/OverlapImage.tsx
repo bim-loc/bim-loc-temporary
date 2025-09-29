@@ -8,14 +8,12 @@ const compare_dict = {
   'Floor-06 (Livox Mid-360)': {
     'discrepancy': 'Floor-06-livox/discrepancy.webp',
     'trajectory': 'Floor-06-livox/trajectory.webp',
+    'aspect': '4/3',
   },
   'Floor-08 (Livox Mid-360)': {
     'discrepancy': 'Floor-08-livox/discrepancy.webp',
     'trajectory': 'Floor-08-livox/trajectory.webp',
-  },
-  'Floor-06 (Ouster OS0-128)': {
-    'discrepancy': 'Floor-06-ouster/discrepancy.webp',
-    'trajectory': 'Floor-06-ouster/trajectory.webp',
+    'aspect': '4/3',
   },
 } as const;
 type FloorKey = keyof typeof compare_dict;
@@ -47,7 +45,8 @@ export const OverlapImage = () => {
             ))}
           </ul>
         </div>
-        <div className="diff aspect-4/3" tabIndex={0}>
+
+        <div className={`diff aspect-${compare_dict[selected_floor].aspect}`} tabIndex={0}>
           <div className="diff-item-1" role="img" tabIndex={0}>
             <img
               alt="Discrepancy Image" 
