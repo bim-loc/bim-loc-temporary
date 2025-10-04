@@ -23,7 +23,7 @@ export const Title = () => {
       address_flag: "1"
     },
     {
-      name: "Yinpeng Pan",
+      name: "Yipeng Pan",
       icon: "./icon/capoo.webp",
       address_flag: "1"
     },

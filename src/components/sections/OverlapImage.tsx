@@ -26,8 +26,11 @@ export const OverlapImage = () => {
     <SectionContainer>
       <div className="card-body">
         <div className="divider divider-neutral text-2xl font-bold text-center">
-          BIM-Aided Trajectory Optimization
+          Localization & Discrepancy Detection Performance
         </div>
+        {/* <div className="p-2 text-xl">
+          The trajectory estimation is further improved by BIM-integrated pose graph optimization. A comparison of image pair shows the deliverables of BIM-Loc algorihtm.
+        </div> */}
         {/* Overlapped Image for comparison */}
         <div className="dropdown dropdown-center">
           <div tabIndex={0} role="button" className="btn btn-soft w-full shadow-md">

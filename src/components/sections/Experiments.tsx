@@ -76,7 +76,7 @@ export const Experiments = () => {
     <SectionContainer>
       <div className="card-body">
         <div className="divider divider-neutral text-2xl font-bold text-center">
-          Simluation & Construction Discrepancy Detection
+          Discrepancy Detection on 3D BIM Models
         </div>
         <div className="flex flex-row justify-around gap-4">
           <div className="text-center text-lg font-bold mt-2">Texture Map</div>
