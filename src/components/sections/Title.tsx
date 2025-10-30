@@ -66,8 +66,8 @@ export const Title = () => {
     "★: Corresponding Author";
 
   // 最新消息
-  const news = "[2025-09-11] This template project is still under development.";
-  // const news: string = "";
+  // const news = "[2025-09-11] This template project is still under development.";
+  const news: string = "";
 
   // 强调内容
   // const emphases = [
@@ -79,19 +79,21 @@ export const Title = () => {
   const emphases: string[] = [];
 
   // 提供引导资料链接
-  const buttons = [
-    {
-      disabled: true,
-      name: "Arxiv",
-      icon: "DocumentTextIcon",
-    },
-    {
-      disabled: true,
-      name: "Code",
-      link: "https://github.com/JunyaoHu/academic-project-page-template-vue",
-      icon: "FolderIcon",
-    },
-  ];
+  // const buttons = [
+  //   {
+  //     disabled: true,
+  //     name: "Arxiv",
+  //     icon: "DocumentTextIcon",
+  //   },
+  //   {
+  //     disabled: true,
+  //     name: "Code",
+  //     link: "",
+  //     icon: "FolderIcon",
+  //   },
+  // ];
+
+  const buttons: any[] = [];
 
   return (
     <SectionContainer>

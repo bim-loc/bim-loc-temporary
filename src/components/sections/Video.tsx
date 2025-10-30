@@ -4,17 +4,17 @@ const video_url_list = [
   {
     id: 'simulation',
     url: 'https://www.youtube.com/embed/qyvKdIYjmdc',
-    title: 'Simulation Benchmark (Office-01)',
+    title: 'Simulation Benchmark (Office-01, Speed up x5)',
   },
   {
     id: 'construction-f06',
     url: 'https://www.youtube.com/embed/YLP0EsT-fmo',
-    title: 'Construction Benchmark (Floor-06)',
+    title: 'Construction Benchmark (Floor-06, Speed up x5)',
   },
   {
     id: 'construction-f08',
     url: 'https://www.youtube.com/embed/RwSfap5dQoA',
-    title: 'Construction Benchmark (Floor-08)',
+    title: 'Construction Benchmark (Floor-08, Speed up x5)',
   },
 ]
 

@@ -11,32 +11,32 @@ const methodologyData = [
     title: 'Front-end odometry',
     description: 'Front-end odometry',
     disabled: true,
-    image: '',
+    video_link: '',
   },
   
   {
     idx: 1,
     label: '(1)',
-    title: 'BIM-point association',
+    title: 'Multi-Hit Ray Casting',
     description: 'BIM-point association',
     disabled: false,
-    image: 'method/multi_hit_raycasting.webp',
+    video_link: 'https://www.youtube.com/embed/msPwKZr-03Q',
   },
   { 
     idx: 2,
     label: '(2)',
-    title: 'BIM-observation consistency',
+    title: 'Trajectory Optimization',
     description: 'BIM-observation consistency',
     disabled: false,
-    image: 'method/trajectory_optimization.svg',
+    video_link: 'https://www.youtube.com/embed/1wYoY56XYK4',
   },
   {
     idx: 3,
     label: '(3)',
-    title: 'Discrepancy indentification',
+    title: 'Discrepancy Detection',
     description: 'Discrepancy indentification',
     disabled: false,
-    image: 'method/discrepancy_detection.webp',
+    video_link: 'https://www.youtube.com/embed/2APtnvV3Xx0',
   },
 ];
 
@@ -78,7 +78,7 @@ export const ProblemFormulation = () => {
                                 \sum^K_{k=1}\sum_{n=1}^N\underbrace{\delta(n, k)}_{(1)} \cdot \underbrace{r(\mathcal{P}_k, \boldsymbol{x}_k, \boldsymbol{b}_n)}_{(2)}\cdot\underbrace{(1-\mathbb{I}_n)}_{(3)}
                                 \end{equation*}" />
             </div>
-            <div className="flex flex-row flex-wrap justify-center items-center w-full h-112 mt-2 p-2">
+            <div className="flex flex-row flex-wrap justify-center items-center w-full mt-2 p-2">
               <ul className="list w-1/2 text-xl">
                   {methodologyData.map((item) => (
                     <li className="list-row">
@@ -88,9 +88,19 @@ export const ProblemFormulation = () => {
                     </li>
                   ))}
               </ul>
-              <div className="card w-1/2 p-2 justify-center items-center">
-                  <img src={`${import.meta.env.BASE_URL}/${methodologyData[selectedMethod].image}`} alt="method" style={{backgroundColor: 'white'}} />
-              </div>
+              {methodologyData[selectedMethod].video_link && (
+                <div className="relative group mt-4 w-1/2">
+                  <div className="aspect-video w-full relative overflow-hidden">
+                    <iframe
+                      className="w-full h-full rounded-md"
+                      src={methodologyData[selectedMethod].video_link}
+                      title={methodologyData[selectedMethod].title}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  </div>
+                </div>
+              )}
             </div>
           </fieldset>
         </div>
