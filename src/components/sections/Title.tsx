@@ -30,12 +30,12 @@ export const Title = () => {
     {
       name: "Maolin Lei",
       icon: "./icon/capoo.webp",
-      address_flag: "2"
+      address_flag: "3"
     },
     {
       name: "Xiaowei Luo",
       icon: "./icon/capoo.webp",
-      address_flag: "3"
+      address_flag: "2"
     },
     {
       name: "Jia Pan",
