@@ -1,11 +1,32 @@
-import { 
-  DocumentTextIcon, 
-  BookOpenIcon, 
-  FolderIcon, 
-  EnvelopeIcon,
-  InformationCircleIcon 
+import {
+  DocumentTextIcon,
+  BookOpenIcon,
+  PlayCircleIcon,
+  CodeBracketIcon,
+  InformationCircleIcon,
 } from '@heroicons/react/24/outline';
 import { SectionContainer } from '../shared/SectionContainer';
+
+type TitleButtonIcon =
+  | 'BookOpenIcon'
+  | 'DocumentTextIcon'
+  | 'PlayCircleIcon'
+  | 'CodeBracketIcon';
+
+type TitleButton = {
+  name: string;
+  icon: TitleButtonIcon;
+  link?: string;
+  disabled?: boolean;
+  badge?: string;
+};
+
+const buttonIcons: Record<TitleButtonIcon, React.ComponentType<{ className?: string }>> = {
+  BookOpenIcon,
+  DocumentTextIcon,
+  PlayCircleIcon,
+  CodeBracketIcon,
+};
 
 export const Title = () => {
   const logo = `${import.meta.env.BASE_URL}BKI.webp`;
@@ -88,22 +109,14 @@ export const Title = () => {
   // ];
   const emphases: string[] = [];
 
-  // 提供引导资料链接
-  // const buttons = [
-  //   {
-  //     disabled: true,
-  //     name: "Arxiv",
-  //     icon: "DocumentTextIcon",
-  //   },
-  //   {
-  //     disabled: true,
-  //     name: "Code",
-  //     link: "",
-  //     icon: "FolderIcon",
-  //   },
-  // ];
+  const placeholderLink = new URL(import.meta.env.BASE_URL, window.location.origin).href;
 
-  const buttons: any[] = [];
+  const buttons: TitleButton[] = [
+    { name: 'Paper', link: placeholderLink, icon: 'BookOpenIcon' },
+    { name: 'arXiv', link: placeholderLink, icon: 'DocumentTextIcon' },
+    { name: 'Video', link: 'https://youtu.be/c1gNS0f4Ggs', icon: 'PlayCircleIcon' },
+    { name: 'Code', icon: 'CodeBracketIcon', disabled: true, badge: 'Coming Soon' },
+  ];
 
   return (
     <SectionContainer>
@@ -175,7 +188,7 @@ export const Title = () => {
           </div>
         </div> */}
 
-        <div className="mb-4">
+        <div className="mb-6">
           <div className="flex flex-wrap justify-center gap-2">
             {authors.map((author, index) => (
               <span key={index} className="text-xl font-bold">
@@ -192,12 +205,10 @@ export const Title = () => {
               </span>
             ))}
           </div>
+          <p className="mt-2 text-md text-gray-500">
+            {con_and_corresponding_author}
+          </p>
         </div>
-
-        {/* 共一和通讯提示 */}
-        <p className="text-lg text-gray-600 mb-6 font-bold">
-          {con_and_corresponding_author}
-        </p>
 
         {/* 最新消息 */}
         {news && (
@@ -221,25 +232,49 @@ export const Title = () => {
         )}
 
         {/* 按钮组 */}
-        <div className="flex flex-wrap justify-center gap-4">
-          {buttons.map((button, index) => (
-            <div
-              key={index}
-              className={`btn btn-neutral btn-lg rounded-4xl shadow-lg 
-                        ${button.disabled ? 'btn-disabled' : ''}`}
-              onClick={() => {
-                if (!button.disabled && button.link) {
-                  window.open(button.link, '_blank');
-                }
-              }}
-            >
-              {button.icon === "DocumentTextIcon" && <DocumentTextIcon className="w-5 h-5 mr-2" />}
-              {button.icon === "BookOpenIcon" && <BookOpenIcon className="w-5 h-5 mr-2" />}
-              {button.icon === "FolderIcon" && <FolderIcon className="w-5 h-5 mr-2" />}
-              {button.icon === "EnvelopeIcon" && <EnvelopeIcon className="w-5 h-5 mr-2" />}
-              {button.name}
-            </div>
-          ))}
+        <div className="flex flex-wrap justify-center gap-3 sm:gap-4 max-w-3xl mx-auto">
+          {buttons.map((button) => {
+            const Icon = buttonIcons[button.icon];
+            const className =
+              'btn btn-neutral btn-lg rounded-4xl shadow-lg min-w-[9rem] gap-2 font-semibold';
+
+            if (button.disabled) {
+              return (
+                <button
+                  key={button.name}
+                  type="button"
+                  className={`${className} btn-disabled`}
+                  disabled
+                  title="Code will be released soon"
+                >
+                  <Icon className="w-5 h-5 shrink-0" />
+                  {button.name}
+                  {button.badge && (
+                    <span className="badge badge-ghost ml-1 h-auto min-h-0 py-1 px-2 font-normal">
+                      <span className="flex flex-col items-center leading-[1.15] text-[0.625rem] font-bold tracking-wide">
+                        {button.badge.split(' ').map((word) => (
+                          <span key={word}>{word}</span>
+                        ))}
+                      </span>
+                    </span>
+                  )}
+                </button>
+              );
+            }
+
+            return (
+              <a
+                key={button.name}
+                className={className}
+                href={button.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon className="w-5 h-5 shrink-0" />
+                {button.name}
+              </a>
+            );
+          })}
         </div>
       </div>
     </SectionContainer>
