@@ -8,7 +8,7 @@ import {
 import { SectionContainer } from '../shared/SectionContainer';
 
 export const Title = () => {
-  const logo = './BKI.webp';
+  const logo = `${import.meta.env.BASE_URL}BKI.webp`;
   const title = 'BIM-Loc';
   const title_supp = 'BIM-Integrated Discrepancy-Aware Indoor LiDAR-based Localization';
   const authors = [

@@ -9,8 +9,8 @@ const carouselData = [
     title: 'Simulation Floor-07',
     button_title: 'Floor-07',
     images: [
-      '/progress/Sim_floor_07.webp',
-      '/progress/Sim_floor_07_existence.webp'
+      'progress/Sim_floor_07.webp',
+      'progress/Sim_floor_07_existence.webp'
     ]
   },
   {
@@ -19,8 +19,8 @@ const carouselData = [
     title: 'Simulation Floor-08',
     button_title: 'Floor-08',
     images: [
-      '/progress/Sim_floor_08.webp',
-      '/progress/Sim_floor_08_existence.webp'
+      'progress/Sim_floor_08.webp',
+      'progress/Sim_floor_08_existence.webp'
     ]
   },
   {
@@ -29,8 +29,8 @@ const carouselData = [
     title: 'Simulation Floor-10',
     button_title: 'Floor-10',
     images: [
-      '/progress/Sim_floor_10.webp',
-      '/progress/Sim_floor_10_existence.webp'
+      'progress/Sim_floor_10.webp',
+      'progress/Sim_floor_10_existence.webp'
     ]
   },
   {
@@ -39,8 +39,8 @@ const carouselData = [
     title: 'Simulation Floor-12',
     button_title: 'Floor-12',
     images: [
-      '/progress/Sim_floor_12.webp',
-      '/progress/Sim_floor_12_existence.webp'
+      'progress/Sim_floor_12.webp',
+      'progress/Sim_floor_12_existence.webp'
     ]
   },
   {
@@ -49,8 +49,8 @@ const carouselData = [
     title: 'Construction Floor-06',
     button_title: 'Floor-06',
     images: [
-      '/progress/Real_floor_06.webp',
-      '/progress/Real_floor_06_existence.webp'
+      'progress/Real_floor_06.webp',
+      'progress/Real_floor_06_existence.webp'
     ]
   },
   {
@@ -59,8 +59,8 @@ const carouselData = [
     title: 'Construction Floor-08',
     button_title: 'Floor-08',
     images: [
-      '/progress/Real_floor_08.webp',
-      '/progress/Real_floor_08_existence.webp'
+      'progress/Real_floor_08.webp',
+      'progress/Real_floor_08_existence.webp'
     ]
   },
 ];

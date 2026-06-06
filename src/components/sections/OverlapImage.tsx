@@ -53,13 +53,13 @@ export const OverlapImage = () => {
           <div className="diff-item-1" role="img" tabIndex={0}>
             <img
               alt="Discrepancy Image" 
-              src={`${import.meta.env.BASE_URL}/${data_folder_name}/${compare_dict[selected_floor].discrepancy}`}
+              src={`${import.meta.env.BASE_URL}${data_folder_name}/${compare_dict[selected_floor].discrepancy}`}
             />
           </div>
           <div className="diff-item-2" role="img">
             <img
               alt="Discrepancy Image" 
-              src={`${import.meta.env.BASE_URL}/${data_folder_name}/${compare_dict[selected_floor].trajectory}`}
+              src={`${import.meta.env.BASE_URL}${data_folder_name}/${compare_dict[selected_floor].trajectory}`}
             />
           </div>
           <div className="diff-resizer"></div>
