@@ -109,11 +109,11 @@ export const Title = () => {
   // ];
   const emphases: string[] = [];
 
-  const placeholderLink = new URL(import.meta.env.BASE_URL, window.location.origin).href;
+  const arxivLink = 'https://arxiv.org/abs/2606.14237';
 
   const buttons: TitleButton[] = [
-    { name: 'Paper', link: placeholderLink, icon: 'BookOpenIcon' },
-    { name: 'arXiv', link: placeholderLink, icon: 'DocumentTextIcon' },
+    { name: 'Paper', link: arxivLink, icon: 'BookOpenIcon' },
+    { name: 'arXiv', link: arxivLink, icon: 'DocumentTextIcon' },
     { name: 'Video', link: 'https://youtu.be/c1gNS0f4Ggs', icon: 'PlayCircleIcon' },
     { name: 'Code', icon: 'CodeBracketIcon', disabled: true, badge: 'Coming Soon' },
   ];
